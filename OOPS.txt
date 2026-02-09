@@ -1,0 +1,81 @@
+oops is basically a way for modelling software entities as a real world objects that have state(data) , behaviours(methods) AND interact with each other.
+
+Banking Software 
+        - Customer has data (name, account_id, balance, KYC details, etc.)
+        - Customer can do actions (open accounts, deposit, withdraw, transfer etc.)
+        - different customer behave similarly but have different values (balance differs)
+
+    - OOP lets you represent this in code cleanly. 
+
+-> class is basically a blueprint/template which has data members and member functions.
+-> object is basically instance of the class created at runtime. ex: classname a = new classname(); obj is always created using new keyword as its stored inside heap.
+
+a) Static variables : its declared inside a class and has only one copy and is distributed among all the objects . ex: when we create bank class and objects as its customers then we can create a static variable an increase its val inside the constructor to know how many customers are there of that bank.
+b) static methods : this are accessible without creating any object of the class like we dont need to create any object to access methods of static .
+c) static class : such class cant be inherited and are somewhat final.
+
+
+1) Encapsulation : just binding together data and information in a single unit. like having access modifiers so that not anyone can modify our data and also data that is inserted is also valid like our age cant be negative . all members should be private and getters and setters should be available.
+
+2) Constructors : its a function that  gets created/executed when an object is created in runtime. name should be same as class and no return type. it ensures that object starts its life in a valid state. ex: the practical use case is basically used in file opening and resource management like when we hit the server , db allocates everyone its resources .
+-> it can be default , parameterized , overloaded
+-> valid access modifiers are : default => only accessible within same package
+ public : can be accessed from anywhere inside and outside the package
+ private : accessible within the same class 
+ protected : accessible only within the same package , subclasses can access even in different package.
+
+3) Method overloading : same method name, but diff parameters. its a compile type polymorphism. Java picks the “most specific” match, by matching the parameters between the calling method and declared methods . this decision is taken during compile time ex: if method overloaded is of int and main values passed is of byte, then its compilers work to so the things.
+
+4) Static binding:  When does the static binding happens?
+ -> when the method call is resolved at compile time it is called "Static binding"
+ -> static methods 
+ -> final methods - always bound at compile time 
+ -> private methods - compiler binds private methods at compile time
+ -> method overloading - depends on parameters / parameter types, it is decided at compile time 
+
+   class Parent {
+                static void show(){
+                    sysout("Parent");
+                }
+            }
+
+  class Child extends Parent {
+                static void show(){
+                    sysout("Child");
+                }
+            }
+
+            Parent p = new Child();  
+	    p.show();   		
+
+// we have created child object and stored its reference inside p variable . when we do p.show() it generally calls the show function of parent as At runtime, the JVM looks at the actual object that p points to and object is of child type. 
+-> but for this code it will call parent class show() because method is static it is not overridden, and the method call is resolved by reference type so jvm will decide which function to call during compile time.
+-> in java, a parent class variable can reference to a child object                       
+                         
+5) Inheritance : mechanism where a class (subclass/childclass) acquires the properties and behavior of another class (parentclass/superclass).  used for code reusability , local hierarchy , enable runtime polymorphism and reduces duplication.
+-> represents a relationship between a superclass and subclass and it supports single inheritance and not multiple due to ambiguity.
+
+-> super(): by default, child class constructor always invoks superclass's no-arg constructor , constructor are not inherited but parent class constr. can be invoked using super , super always refers to the immediate parent class. super helps subclasses access parent class members when they are hidden, overridden, or need explicit constructor calls.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
