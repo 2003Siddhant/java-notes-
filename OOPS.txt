@@ -29,7 +29,7 @@ c) static class : such class cant be inherited and are somewhat final.
 4) Static binding:  When does the static binding happens?
  -> when the method call is resolved at compile time it is called "Static binding"
  -> static methods 
- -> final methods - always bound at compile time 
+ -> final methods - always bound at compile time , because they cant be overridden and always invoked at compile time.
  -> private methods - compiler binds private methods at compile time
  -> method overloading - depends on parameters / parameter types, it is decided at compile time 
 
@@ -52,17 +52,42 @@ c) static class : such class cant be inherited and are somewhat final.
 -> but for this code it will call parent class show() because method is static it is not overridden, and the method call is resolved by reference type so jvm will decide which function to call during compile time.
 -> in java, a parent class variable can reference to a child object                       
                          
-5) Inheritance : mechanism where a class (subclass/childclass) acquires the properties and behavior of another class (parentclass/superclass).  used for code reusability , local hierarchy , enable runtime polymorphism and reduces duplication.
+5) Inheritance : mechanism where a class (subclass/child class) acquires the properties and behavior of another class (parent class/superclass).  used for code reusability , local hierarchy , enable runtime polymorphism and reduces duplication.
 -> represents a relationship between a superclass and subclass and it supports single inheritance and not multiple due to ambiguity.
 
--> super(): by default, child class constructor always invoks superclass's no-arg constructor , constructor are not inherited but parent class constr. can be invoked using super , super always refers to the immediate parent class. super helps subclasses access parent class members when they are hidden, overridden, or need explicit constructor calls.
+Q) Why java doesn't support multiple inheritance 
+Ans: avoid ambiguity in method resolution, data conflicts, constructor initialization issues , avoid commonly known diamond problem 
+ --**Java supports multiple inheritance through interfaces - ensures clarity, type safety and predictable runtime behavior 
+
+-> super(): by default, child class constructor always invokes superclass's no-arg constructor , constructor are not inherited but parent class constr. can be invoked using super , super always refers to the immediate parent class. super helps subclasses access parent class members when they are hidden, overridden, or need explicit constructor calls.
 
 
+--> Loose coupling :designing principle where classes or modules have minimal dependency on each other. we can achieve it through runtime polymorphism .  Classes interact through well-defined interfaces or abstractions, not direct implementation details. This makes the system more flexible, maintainable, and testable
+--> Tight coupling : classes/modules are highly dependent on each other and some changes in one class often require changes in others. its difficult to maintain and update and also harder to test in isolation.
 
 
+6) Object Class: its the root class and super/top most class and all other class inherits from it. it provides some methods that all java objects should have like toString(), equals() and hashcode() , finalize() , wait().
 
 
+7) Abstract Classes : its a class that cant be instantiated means object cant be created and its basically use mostly for laying out the blueprint of how the code structure looks like and abstract methods will always be overridden by the subclasses. it may or may not have abstract methods.
+-> if a class has an abst. methods then that class must be declared abstract . abs methods are just declared without an implementation.
+-> abstract modifier means that class will always be used as an superclass.
+-> abstract methods will never be static or final as they will always be overridden. 
+-> abstract classes are not interfaces.
+-> Abstract methods are usually declared where two ore more subclasses are expected to do a similar thing in different ways through different implementations 
+-> private and static methods can also not be abstract.
 
+
+8) Interface : an interface in java is a "pure contract" that defines what a class "Can do" , that basically we define behaviour first, implementation later.
+ an interface defines set of requirements that a class has to implement . like animal interface will only define function make-sound but wont implement it.
+--> class uses implements keyword to implement an interface. class that is implementing the interface must override all the abst. methods.
+->a class can implement several interfaces , an interface can extend several interfaces , java7 interface contains only "abstract" methods , java8 contains public and static meth as well.
+in java9 private is also allowed.
+-> Interface is used to achieve complete abstraction in java. Interface must contain abstract methods only . its also used to overcome the problem of multiple inheritance as multiple interfaces can be implemented by a single class.
+-> it also enables loose coupling . ex: Real software must be: scalable , replaceable , loosely coupled
+ex: suppose there are multiple Payment Gateway options like paypal , Razorpay , stripe. all have different options of payment. so we can create an interface of pay and every PaymentGateway 
+class can implement it . so when the option changes we can switch the pay option as pay function will be overridden by all the classes.
+-> abstract classes represent real objects , interface represents "capabilities" / "requirements", not objects .
 
 
 
