@@ -163,7 +163,7 @@ imp : default capacity of hashset is 16.
 
 
 
-\# SORTING , COMPARABLE INTERFACE AND COMPARATOR: 
+\# ***SORTING , COMPARABLE INTERFACE AND COMPARATOR:*** 
 
 -> string , int , float , date have already implemented the comparable interface so we can directly sort using collections. but when we create our owen type then we have to write our comparable interface in order to have objects of our type eligible to be sorted. when we create our own suppose employee class and create obj and stored that inside list then we need to define our compb. interface so that it can be sorted.
 
@@ -201,9 +201,9 @@ Note3 : Since Java 8, we can use Lambda expressions to create a comparator more 
 
 
 
-3\) MAP COLELCTION : collection of key-value pairs and have no duplicates as keys should be unique but values can be duplicated. the Map interface does not extend the Collection interface. Instead, it starts an independent branch in the Java Collections Framework . hashmaps doesnt have ordering. its not synchronized and permits null.
+***3) MAP COLlECTION*** : collection of key-value pairs and have no duplicates as keys should be unique but values can be duplicated. the Map interface does not extend the Collection interface. Instead, it starts an independent branch in the Java Collections Framework . hashmaps doesnt have ordering. its not synchronized and permits null.
 
-
+-> has methods like put, get , containskey, containsValue , remove: used to remove the specific key and returns a boolean value , replace : for replacing a specific key with new key , clear , putAll : copies all of the mappings from the specified map to this map
 
 
 
@@ -214,6 +214,34 @@ ex: set<int> st= mp.keySet() .
 &nbsp;2) values: returns a collection of values contained in the map ex: Collection<string> values = mp.values
 
 &nbsp;3) Entryset :  tough and lambda funcitons can now be used . ex: mp.forEach ((a,b) -> print (a," ",b) );
+
+
+
+
+
+
+
+4\) QUEUE : is a data structure that holds elements prior to processing . it follows FIFO. it has head and tail where new elements are added from the tail and processed or popped from the head. Another kind of queue is double ended queue, or deque. A deque has two heads, allowing elements to be added or removed from both ends. its sub interface of the queue interface.
+
+-> blockingQueue is used for concurrent(multithreading) context . BlockingQueue: abstracts a type of queues that waits for the queue to be non-empty when retrieving an element, and waits for space to become available in the queue when storing an element. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
