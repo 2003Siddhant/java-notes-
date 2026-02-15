@@ -153,7 +153,9 @@ imp : default capacity of hashset is 16.
 
 -> if(st.add("" )) then add() method returns true if the set does not contain the specified element, and returns false if the set already contains the specified element
 
--> set can contain null ele.
+-> set can contain null ele. we can use all types of loop from iterator to enhanced and foreach .
+
+-> containsAll used to know if b is subset of a. , s1.addAll(s2) for union operation , retainsAll for intersection of 2 sets , removeAll for set diff between a and b.
 
 
 
@@ -161,6 +163,37 @@ imp : default capacity of hashset is 16.
 
 
 
+\# SORTING , COMPARABLE INTERFACE AND COMPARATOR: 
+
+-> string , int , float , date have already implemented the comparable interface so we can directly sort using collections. but when we create our owen type then we have to write our comparable interface in order to have objects of our type eligible to be sorted. when we create our own suppose employee class and create obj and stored that inside list then we need to define our compb. interface so that it can be sorted.
+
+
+
+->comparable interface has an natural ordering for sorting means it should sort form firstname and then last kinda. 
+
+ex: public class employee implements comparable<employee>
+
+Note1: We cannot compare objects of different types, e.g. a String object cannot be compared with an Integer object. As the compareTo() method enforces this rule, we can only compare objects of the same type.
+
+
+
+Note2: If we want to reverse the natural ordering, simply swap the objects being compared in the compareTo() method
+
+
+
+COMPARATOR : The Collections utility class provides a method for sorting a list using an external comparator:  Collections.sort(list, comparator) 
+
+-> used to define the custom ordering like sort by age then name. Multiple sorting strategies possible by creating different Comparator objects
+
+ex: compare (Emp e1, Emp e2) { return e1.age.compareTo(e2.age )) ;} 
+
+
+
+
+
+Note3 : Since Java 8, we can use Lambda expressions to create a comparator more easily like this: 
+
+-> Collections.sort(listEmployees, (emp1, emp2) -> emp1.getJoinDate().compareTo(emp2.getJoinDate())); 
 
 
 
@@ -168,26 +201,19 @@ imp : default capacity of hashset is 16.
 
 
 
+3\) MAP COLELCTION : collection of key-value pairs and have no duplicates as keys should be unique but values can be duplicated. the Map interface does not extend the Collection interface. Instead, it starts an independent branch in the Java Collections Framework . hashmaps doesnt have ordering. its not synchronized and permits null.
 
 
 
 
 
+-> 3 ways to iterate: 1) keyset : returns a Set view of the keys contained in the map. Hence we can iterate over the keys of the map. and then with iterator we can traverse it.
 
+ex: set<int> st= mp.keySet() . 
 
+&nbsp;2) values: returns a collection of values contained in the map ex: Collection<string> values = mp.values
 
-
-
-
-
-
-
-
-
-
-
-
-
+&nbsp;3) Entryset :  tough and lambda funcitons can now be used . ex: mp.forEach ((a,b) -> print (a," ",b) );
 
 
 
