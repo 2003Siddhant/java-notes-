@@ -134,9 +134,13 @@ SWITCH : it is used to make a decision from the number of choices .First, the ex
 
 
 
+-> variable storing reference means when obj is created it must be storedinside memory. so variable basically stores the address/refernce of the object inside the memory.
 
 
 
+ARRAY : its a ds provided by java which is used to store ele of similar datatypes. its 0 based indexing. it provides some functions to manipulate array in arrays class.
+
+--> asList : returns a fix sized list backed by an array ,  equals() , sort , copyof , 
 
 
 
