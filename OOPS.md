@@ -124,7 +124,7 @@
 
 ###### **Ans: avoid ambiguity in method resolution, data conflicts, constructor initialization issues , avoid commonly known diamond problem**
 
-###### ** --\*\*Java supports multiple inheritance through interfaces - ensures clarity, type safety and predictable runtime behavior**
+###### \*\* --\*\*Java supports multiple inheritance through interfaces - ensures clarity, type safety and predictable runtime behavior\*\*
 
 ###### 
 
@@ -298,7 +298,7 @@
 
 ##### ***New concept :***
 
-###### **ex: Integer a=131, b=131; then if (a==b) if we see the ans should be true as both a and b points to the same memory reference. but the ans is false as in wrapper class Integer when we assign a primitive value, java calls the integer.valueof method behind the scenes.** 
+###### **ex: Integer a=131, b=131; then if (a==b) if we see the ans should be true as both a and b points to the same memory reference. but the ans is false as in wrapper class Integer when we assign a primitive value, java calls the integer.valueof method behind the scenes.**
 
 ###### **Integer class contains a private static inner class called IntegerCache that stores an array of pre created int objects. if value ffalls within the cache range, valueof returns same reference from this array insted of creating a new object. this saves memory by avoiding duplicate objects for frequently used values.**
 

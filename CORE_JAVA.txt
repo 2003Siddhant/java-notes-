@@ -1,0 +1,67 @@
+Java is a high level programming language which says write once read everywhere (WORA) 
+
+Process flow of execution : 
+1) we write the code in plain text file ending with .java extension.
+2) we run the java compiler and it checks error and converts it into .class file.
+3) The .class file doesn’t contain normal machine code; instead, it contains bytecode (a special set of instructions understood by the Java Virtual Machine).
+4) when we use the java launcher/command it starts the jvm . the JVM reads the bytecode and translates into the instructions that your computer processor can actually execute.
+
+
+JVM : It is an abstract computing machine that is responsible for executing Java program. when we write a program then source code is compile code into bytecode which is understandable by jvm and jvm converts that into the instructions that your computer understands.
+-> It is responsible for the very well-known feature of Java: cross-platform. That means you can write a Java program once and run it anywhere
+-> JVM is platform-dependent (different implementations for Windows, Linux, etc.), but bytecode itself is platform-independent. 
+
+
+JRE : java runtime environment . its a package that provides everything needed to run Java programs.
+-> it contains jvm and core libraries like collections and i/o.
+-> it cant compile code . it only euns already compiled .class files. When you deploy your Java applications on client’s computer, the client needs a JRE to be installed. 
+
+JDK : java development kit. its superset of jre . its a full toolkit for developing java apps.
+-> it contains jre as well as Development tools like javac (compiler), javadoc, jar, debugger, etc.
+
+
+PRIMITIVE DATATYPES : this types are predefined by the language and named by a keyword. there are 8 of this ex: int , char, float, long, boolean, byte, short, double.
+-> there default value is 0.
+
+REFERENCE DATATYPES : Reference variables are created using defined constructors of the classes. They are used to access objects. These variables are declared to be of a specific type that cannot be changed. class , objects and various arrays variable are its ex.
+-> its default value is null.
+
+
+
+VARIALBLE TYPES : variable provide us with name storage that our program can manipulate . int a; means a can only store certain values that falls within certain range that int can hold.
+
+a) local variable : its declared inside methods ,blocks . this are created when method is entered and will be destroyed when exited.
+-> access modifiers can tbe used with local variables and this are implemented at stack internally. no default value so it should be initializes with some value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

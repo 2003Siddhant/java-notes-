@@ -1,28 +1,28 @@
 -> so its a framework where dynamically allocated ds are supported in a unified architecture . {hashmaps  hashset , arraylist , linkedlist }.
 
--> its simply a collection of objects , where each item in a collection is called an element . 
+-> its simply a collection of objects , where each item in a collection is called an element .
 
 -> a framework is a set of interfaces that forces you to hold up some designing practices to improve productivity and maintenance.
 
--> Java Collections Framework is a set of reusable data structures and algorithms which are designed to free programmers from implementing data structures themselves so that they can focus on business logics. 
+-> Java Collections Framework is a set of reusable data structures and algorithms which are designed to free programmers from implementing data structures themselves so that they can focus on business logics.
 
 
 
-there are some hierarchy associated with collections that everyone should follow . 
+there are some hierarchy associated with collections that everyone should follow .
 
 
 
 top of the chain is :
 
-&nbsp;Iterable<E> Interface =>is an interface which takes a generic type E and read as Iterable of element of type E, declares one abstract method called iterator() to retrieve the Iterator<E> object associated with all the collections. 
+ Iterable<E> Interface =>is an interface which takes a generic type E and read as Iterable of element of type E, declares one abstract method called iterator() to retrieve the Iterator<E> object associated with all the collections.
 
-ex:  Iterator<E> iterator();  Returns the associated Iterator ,that can be used to transverse thru all the elements of the collection , all implemenatations of this collection must implement this method . 
+ex:  Iterator<E> iterator();  Returns the associated Iterator ,that can be used to transverse thru all the elements of the collection , all implemenatations of this collection must implement this method .
 
 
 
-2\. Iterator<E> interface: it has 3 abstract methods a) boolean hasnext() : Returns true if it has more elements 
+2\. Iterator<E> interface: it has 3 abstract methods a) boolean hasnext() : Returns true if it has more elements
 
-b) E next() : Returns the next element of generic type E. c) void remove() : Removes the last element returned by the iterator 
+b) E next() : Returns the next element of generic type E. c) void remove() : Removes the last element returned by the iterator
 
 ex: list<String> lst = new Arraylist<String>(); lst.add("sidd") , lst.add("roman")
 
@@ -30,11 +30,11 @@ ex: list<String> lst = new Arraylist<String>(); lst.add("sidd") , lst.add("roman
 
 
 
-3\. Collection interface: The Collection<E>, which takes a generic type E and read as Collection of element of type E, is the root interface of the Collection Framework. It defines the common behaviors expected of all classes, such as how to add or remove an element, via the following abstract methods: 
+3\. Collection interface: The Collection<E>, which takes a generic type E and read as Collection of element of type E, is the root interface of the Collection Framework. It defines the common behaviors expected of all classes, such as how to add or remove an element, via the following abstract methods:
 
 
 
-a) List<e> : list interface is a resizable linear array which allows indexed access, duplicates are allowed. ex: ArrayList, LinkedList, Vector 
+a) List<e> : list interface is a resizable linear array which allows indexed access, duplicates are allowed. ex: ArrayList, LinkedList, Vector
 
 
 
@@ -42,7 +42,7 @@ b) Set<e> : here no duplicate elements are allowed. ex: hashset , treeset
 
 
 
-c) Queue<E> : interface models queues such as First-in-First-out (FIFO) queue and priority queue . ex: priority queue , ArrayDeque 
+c) Queue<E> : interface models queues such as First-in-First-out (FIFO) queue and priority queue . ex: priority queue , ArrayDeque
 
 
 
@@ -62,13 +62,13 @@ a) Arraylist : java ArrayList class uses a dynamic array (Resizable Array Data S
 
 
 
-ex: List<Integer> lst = new Arraylist<>(); here we have created arrlst using empty constructor. it means list has an initial capacity of 10. 
+ex: List<Integer> lst = new Arraylist<>(); here we have created arrlst using empty constructor. it means list has an initial capacity of 10.
 
---> It’s also possible to construct a list that takes elements from an existing collection, for example: 
+--> It’s also possible to construct a list that takes elements from an existing collection, for example:
 
-List<Integer> listNumberOne;      // existing collection 
+List<Integer> listNumberOne;      // existing collection
 
-List<Integer> listNumberTwo = new ArrayList<>(listNumberOne); 
+List<Integer> listNumberTwo = new ArrayList<>(listNumberOne);
 
 
 
@@ -88,9 +88,9 @@ Iterator<string> it=lst.iterator() ;
 
 while(it.hasNext() ) {
 
-&nbsp;	
+ 
 
-&nbsp;	print(it.next() );
+ 	print(it.next() );
 
 }
 
@@ -106,7 +106,7 @@ ans=> The contains() method in Java’s List (like ArrayList) does run a loop in
 
 --> internally it has contains(object o) so it - it iterates through the list elements one by one and checks each element using .equals(o).
 
---> returns a boolean value as a result. 
+--> returns a boolean value as a result.
 
 
 
@@ -120,7 +120,7 @@ ans=> The contains() method in Java’s List (like ArrayList) does run a loop in
 
 
 
---> ▪	Vector is similar to arraylist but with 2 differences i.e vector is synchronized ,Vector contains many legacy methods that are not part of the collections framework 
+--> ▪	Vector is similar to arraylist but with 2 differences i.e vector is synchronized ,Vector contains many legacy methods that are not part of the collections framework
 
 
 
@@ -132,7 +132,7 @@ STACK : Stack is a subclass of Vector that implements a standard last-in, first-
 
 \# iteration in Collections : there are 4 ways : traditional for loop , iterator based loop , enhanced for loop (uses iterator behind the scenes) and the
 
-&nbsp;for each loop list.forEach(a -> print a); it takes a lambda expression.
+ for each loop list.forEach(a -> print a); it takes a lambda expression.
 
 
 
@@ -164,13 +164,13 @@ imp : default capacity of hashset is 16.
 
 
 
-\# SORTING , COMPARABLE INTERFACE AND COMPARATOR: 
+\# SORTING , COMPARABLE INTERFACE AND COMPARATOR:
 
 -> string , int , float , date have already implemented the comparable interface so we can directly sort using collections. but when we create our owen type then we have to write our comparable interface in order to have objects of our type eligible to be sorted. when we create our own suppose employee class and create obj and stored that inside list then we need to define our compb. interface so that it can be sorted.
 
 
 
-->comparable interface has an natural ordering for sorting means it should sort form firstname and then last kinda. 
+->comparable interface has an natural ordering for sorting means it should sort form firstname and then last kinda.
 
 ex: public class employee implements comparable<employee>
 
@@ -182,19 +182,19 @@ Note2: If we want to reverse the natural ordering, simply swap the objects being
 
 
 
-COMPARATOR : The Collections utility class provides a method for sorting a list using an external comparator:  Collections.sort(list, comparator) 
+COMPARATOR : The Collections utility class provides a method for sorting a list using an external comparator:  Collections.sort(list, comparator)
 
 -> used to define the custom ordering like sort by age then name. Multiple sorting strategies possible by creating different Comparator objects
 
-ex: compare (Emp e1, Emp e2) { return e1.age.compareTo(e2.age )) ;} 
+ex: compare (Emp e1, Emp e2) { return e1.age.compareTo(e2.age )) ;}
 
 
 
 
 
-Note3 : Since Java 8, we can use Lambda expressions to create a comparator more easily like this: 
+Note3 : Since Java 8, we can use Lambda expressions to create a comparator more easily like this:
 
--> Collections.sort(listEmployees, (emp1, emp2) -> emp1.getJoinDate().compareTo(emp2.getJoinDate())); 
+-> Collections.sort(listEmployees, (emp1, emp2) -> emp1.getJoinDate().compareTo(emp2.getJoinDate()));
 
 
 
@@ -222,11 +222,11 @@ Note3 : Since Java 8, we can use Lambda expressions to create a comparator more 
 
 -> 3 ways to iterate: 1) keyset : returns a Set view of the keys contained in the map. Hence we can iterate over the keys of the map. and then with iterator we can traverse it.
 
-ex: set<int> st= mp.keySet() . 
+ex: set<int> st= mp.keySet() .
 
-&nbsp;2) values: returns a collection of values contained in the map ex: Collection<string> values = mp.values
+ 2) values: returns a collection of values contained in the map ex: Collection<string> values = mp.values
 
-&nbsp;3) Entryset :  tough and lambda funcitons can now be used . ex: mp.forEach ((a,b) -> print (a," ",b) );
+ 3) Entryset :  tough and lambda funcitons can now be used . ex: mp.forEach ((a,b) -> print (a," ",b) );
 
 
 
@@ -242,7 +242,7 @@ ex: set<int> st= mp.keySet() .
 
 
 
-ex: Queue<Integer> q= new Linkedlist()<>; Deque<Integer> dq= new ArrayDeque()<>; it has add , offer , addfirst , addlast 
+ex: Queue<Integer> q= new Linkedlist()<>; Deque<Integer> dq= new ArrayDeque()<>; it has add , offer , addfirst , addlast
 
 Queue<String> customers = new ArrayBlockingQueue()<>; this is used when we have a bounded or fixed capacity.
 
@@ -252,7 +252,7 @@ Queue<String> customers = new ArrayBlockingQueue()<>; this is used when we have 
 
 
 
-a) ***ArrayBlockingQueue***: this is a blocking queue backed by an array. Consider using an ArrayBlockingQueue when you want to use a simple blocking queue that has limited capacity (bounded). 
+a) ***ArrayBlockingQueue***: this is a blocking queue backed by an array. Consider using an ArrayBlockingQueue when you want to use a simple blocking queue that has limited capacity (bounded).
 
 this is mostly used in projects as they are thread safe and concurrent .  ex: BlockingQueue<String> customers = new ArrayBlockingQueue()<>;
 
@@ -263,24 +263,4 @@ Adding ele : in this queue add() method will throw an exception if it starts to 
 removing ele : The remove() method returns the head element or throws an exception if the queue is empty , the poll() method returns null if the queue is empty, for BlockingQueue use take or poll method if we want to wait.
 
 examine : this just tells you the current head of the queue and doesnt remove it. element is same like add and remove while peek is like offer and poll .
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
